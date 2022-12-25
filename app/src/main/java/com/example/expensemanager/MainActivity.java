@@ -52,7 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(MainActivity.this,"LogIn Success!",Toast.LENGTH_SHORT).show();
+                        try {
+                            startActivity(new Intent(MainActivity.this,DashboardActivity.class));
+                        }
+                        catch (Exception e){
+
+                        }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
