@@ -99,20 +99,23 @@
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.core.widget.NestedScrollView
-        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/card_view_labels"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/card_view_labels"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_marginRight="10dp">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/history_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </androidx.core.widget.NestedScrollView>
     <androidx.cardview.widget.CardView
+        android:id="@+id/add_floating_btn"
         android:backgroundTint="@color/red"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
