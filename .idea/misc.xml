@@ -5,11 +5,14 @@
       <map>
         <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/drawable/edit_text_background.xml" value="0.1" />
         <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/drawable/edit_text_bg.xml" value="0.1" />
+        <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/drawable/green_shape.xml" value="0.1" />
         <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1" />
+        <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/drawable/red_shape.xml" value="0.1" />
         <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/layout/activity_add_transaction.xml" value="0.2796875" />
         <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/layout/activity_dashboard.xml" value="0.2786458333333333" />
         <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/Users/user/Documents/ExpenseManager/app/src/main/res/layout/one_recycler_item.xml" value="0.25" />
       </map>
     </option>
   </component>
