@@ -19,6 +19,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity {
+
     ActivityDashboardBinding binding;
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
@@ -48,6 +49,18 @@ public class DashboardActivity extends AppCompatActivity {
                 }
             }
         });
+        binding.chartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    startActivity(new Intent(DashboardActivity.this,PieChart.class));
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+        });
         loadData();
     }
 
@@ -64,4 +77,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
     }
-}
+
+
+
+    }

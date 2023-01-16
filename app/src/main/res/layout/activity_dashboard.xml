@@ -150,4 +150,34 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chart_button"
+        android:backgroundTint="@color/red"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="70dp"
+        android:layout_margin="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp">
+        <RelativeLayout
+
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/chart_img"
+                android:src="@drawable/ic_baseline_pie_chart_24"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </RelativeLayout>

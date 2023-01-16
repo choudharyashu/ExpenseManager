@@ -68,7 +68,7 @@ public class AddTransactionActivity extends AppCompatActivity {
                 {
                     Toast.makeText(AddTransactionActivity.this, "Select Transaction Type", Toast.LENGTH_SHORT).show();
                 }
-                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd mm yyyy_HH:mm", Locale.getDefault());
+                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd MM yyyy_HH:mm", Locale.getDefault());
                 String currentDateandTime = simpleDateFormat.format(new Date());
 
 
