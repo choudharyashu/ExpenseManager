@@ -12,6 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/red">
+        <ImageView
+            android:id="@+id/refresh_btn"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/refresh_img"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -48,14 +56,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
+
                 <TextView
-                    android:text="000"
-                    android:textSize="18sp"
-                    android:textColor="@color/green"
-                    android:layout_alignParentRight="true"
+                    android:id="@+id/total_income"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="000"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"></TextView>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -68,14 +77,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
+
                 <TextView
-                    android:text="000"
-                    android:textSize="18sp"
-                    android:textColor="@color/red"
-                    android:layout_alignParentRight="true"
+                    android:id="@+id/total_expense"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="000"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"></TextView>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -88,14 +98,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
+
                 <TextView
-                    android:text="000"
-                    android:textSize="18sp"
-                    android:textColor="@color/black"
-                    android:layout_alignParentRight="true"
+                    android:id="@+id/total_balance"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="000"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"></TextView>
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

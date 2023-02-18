@@ -24,6 +24,9 @@ public class DashboardActivity extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
 
+    int sumExpense=0;
+    int sumIncome=0;
+
     ArrayList<TransactionModel> transactionModelArrayList;
     TransactionAdapter transactionAdapter;
     @Override
@@ -37,6 +40,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         binding.historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.historyRecyclerView.setHasFixedSize(true);
+
         binding.addFloatingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +65,21 @@ public class DashboardActivity extends AppCompatActivity {
                 }
             }
         });
+
+        binding.refreshBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    startActivity(new Intent(DashboardActivity.this,DashboardActivity.class));
+                    finish();
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+        });
+
         loadData();
     }
 
@@ -70,8 +89,22 @@ public class DashboardActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 for(DocumentSnapshot ds: task.getResult()){
                     TransactionModel model=new TransactionModel(ds.getString("ID"),ds.getString("Note"),ds.getString("Amount"),ds.getString("Type"),ds.getString("Date"));
+
+                    int amount= Integer.parseInt(ds.getString("Amount"));
+                    if(ds.getString("Type").equals("Expense")){
+                        sumExpense+=amount;
+                    }
+                    else
+                    {
+                        sumIncome+=amount;
+                    }
+
                     transactionModelArrayList.add(model);
+
                 }
+                binding.totalExpense.setText(String.valueOf(sumExpense));
+                binding.totalIncome.setText(String.valueOf(sumIncome));
+                binding.totalBalance.setText(String.valueOf(sumIncome-sumExpense));
                 transactionAdapter=new TransactionAdapter(DashboardActivity.this,transactionModelArrayList);
                 binding.historyRecyclerView.setAdapter(transactionAdapter);
             }
