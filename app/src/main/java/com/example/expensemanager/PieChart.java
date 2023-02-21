@@ -34,7 +34,7 @@ public class PieChart extends AppCompatActivity {
 
         firebaseFirestore=FirebaseFirestore.getInstance();
         firebaseAuth=FirebaseAuth.getInstance();
-
+        //function to load data
         loadData();
     }
 
