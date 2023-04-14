@@ -1,9 +1,11 @@
 package com.example.expensemanager;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +42,24 @@ public class DashboardActivity extends AppCompatActivity {
 
         binding.historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.historyRecyclerView.setHasFixedSize(true);
+
+        firebaseAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if(firebaseAuth.getCurrentUser()==null){
+                    startActivity(new Intent(DashboardActivity.this, MainActivity.class));
+                    finish();
+                }
+            }
+        });
+
+        binding.signoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createSignoutDialog();
+                
+            }
+        });
 
         binding.addFloatingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +101,22 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
         loadData();
+    }
+
+    private void createSignoutDialog() {
+        AlertDialog.Builder builder= new AlertDialog.Builder(DashboardActivity.this);
+        builder.setTitle("Log Out").setMessage("Are you sure you want to log out?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                firebaseAuth.signOut();
+            }
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.create().show();
     }
 
     private void loadData() {
